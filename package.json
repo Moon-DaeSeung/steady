@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
     "gatsby": "^4.1.1",
     "gatsby-plugin-gatsby-cloud": "^4.1.0",
     "gatsby-plugin-image": "^2.1.0",
@@ -17,10 +19,14 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "twin.macro": "^2.8.1"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "gatsby-plugin-postcss": "^5.2.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.19"
   },
   "keywords": [
     "gatsby"

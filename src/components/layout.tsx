@@ -6,13 +6,14 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import 'twin.macro'
 import "./layout.css"
 
-const Layout = ({ children }) => {
+type LayoutProp = {
+  children: React.ReactNode
+}
+const Layout = ({ children }: LayoutProp) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -21,11 +22,13 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `)``
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    <div tw='height' >
+      <header tw=''>
+
+      </header>
       <div
         style={{
           margin: `0 auto`,
@@ -34,22 +37,12 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
-    </>
-  )
-}
+      <footer>
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+      </footer>
+    </div>
+  )
 }
 
 export default Layout
