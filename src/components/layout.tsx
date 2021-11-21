@@ -22,10 +22,10 @@ const Layout = ({ children }: LayoutProp) => {
         }
       }
     }
-  `)``
+  `)
 
   return (
-    <div tw='height' >
+    <div tw='bg-red-800'>
       <header tw=''>
 
       </header>
