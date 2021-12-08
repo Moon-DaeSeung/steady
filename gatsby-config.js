@@ -41,7 +41,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-theme-ui`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
