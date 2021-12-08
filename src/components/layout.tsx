@@ -6,8 +6,8 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import 'twin.macro'
+import { useStaticQuery, graphql, Link } from "gatsby"
+import tw from 'twin.macro'
 import "./layout.css"
 
 type LayoutProp = {
@@ -25,24 +25,29 @@ const Layout = ({ children }: LayoutProp) => {
   `)
 
   return (
-    <div tw='bg-red-800'>
-      <header tw=''>
-
+    <div css={[tw`min-h-screen flex flex-col items-center `]}>
+      <header css={[tw`text-2xl border-b-2 flex justify-center w-full`]}>
+        <nav css={[constraint, tw`flex items-center justify-evenly` ]}>
+          <Link css={[tw`flex font-bold text-3xl `]} to="/">Blog</Link>
+          <ul css={[tw`flex justify-end items-center gap-7 flex-1 m-0 `]}>
+            <li css={[tw`m-0`]}>
+              <Link to="/about/">About</Link>
+            </li>
+            <li css={[tw`m-0`]}>
+              <Link to="/posts/">Posts</Link>
+            </li>
+            <li css={[tw`m-0`]}>
+              <Link to="/playground/">Playground</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-      </div>
-      <footer>
-
-      </footer>
+      <main css={[constraint]}>{children}</main>
+      <footer></footer>
     </div>
   )
 }
 
 export default Layout
+
+const constraint = tw`xl:max-width[1280px] w-full h-full p-4` 
